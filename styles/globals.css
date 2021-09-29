@@ -1,0 +1,57 @@
+:root {
+  --col: 2;
+}
+
+@media screen and (max-width: 960px) {
+  :root {
+    --col: 1;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+ul {
+  columns: var(--col);
+}
+
+li {
+  margin: 0 3em 0.5em 0;
+}
+
+.category-label {
+  font-size: 0.8em;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 0.2em 0.5em;
+  margin: 0 0.5em 0 0;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+footer dl div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer dt::after {
+  content: ":";
+  margin: 0 0.5em 0 0;
+}
+
+footer dd {
+  margin: 0;
+}
