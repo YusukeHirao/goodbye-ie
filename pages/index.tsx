@@ -101,6 +101,12 @@ const Home: NextPage<{ db: any; date: string; version: string }> = ({
               <a href="https://www.npmjs.com/package/caniuse-db">v{version}</a>
             </dd>
           </div>
+          <div>
+            <dt>GitHub</dt>
+            <dd>
+              <a href="https://github.com/YusukeHirao/goodbye-ie">リポジトリ</a>
+            </dd>
+          </div>
         </dl>
       </footer>
     </div>
