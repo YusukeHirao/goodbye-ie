@@ -17,7 +17,7 @@ const Home: NextPage<{ db: any; date: string; version: string }> = ({
   const browsers = { ie, chrome, edge, firefox, safari, ios_saf, and_chr };
 
   const now = new Date(date);
-  console.log(version);
+
   return (
     <div>
       <Head>
