@@ -67,6 +67,12 @@ const Home: NextPage<{ db: any; date: string; version: string }> = ({
           <small>パーシャルサポートを含みます</small>
         </p>
 
+        <a
+          href={`https://caniuse.com/?compare=ie+11,edge+${edge},firefox+${firefox},chrome+${chrome},safari+${safari},ios_saf+${ios_saf},and_chr+${and_chr}&compareCats=all#results`}
+        >
+          Can I useでの全テクノロジー比較表
+        </a>
+
         <h2 id="browsers">対象ブラウザ</h2>
         <ul>
           <li>Chrome v{chrome}</li>
