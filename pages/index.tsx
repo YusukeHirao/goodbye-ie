@@ -63,6 +63,10 @@ const Home: NextPage<{ db: any; date: string; version: string }> = ({
           })}
         </ul>
 
+        <p>
+          <small>パーシャルサポートを含みます</small>
+        </p>
+
         <h2 id="browsers">対象ブラウザ</h2>
         <ul>
           <li>Chrome v{chrome}</li>
