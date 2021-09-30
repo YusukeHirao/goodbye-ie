@@ -31,7 +31,10 @@ const Home: NextPage<{ db: any; date: string; version: string }> = ({
       <main>
         <h1>Goodbye IE</h1>
 
-        <p>IE11以外の主要ブラウザがサポートしているウェブテクノロジー一覧</p>
+        <p>
+          IE11以外の<a href="#browsers">主要ブラウザ</a>
+          がサポートしているウェブテクノロジー一覧
+        </p>
         <p>
           データは
           <a href="https://caniuse.com/">Can I use</a>の
@@ -58,6 +61,16 @@ const Home: NextPage<{ db: any; date: string; version: string }> = ({
             }
             return null;
           })}
+        </ul>
+
+        <h2 id="browsers">対象ブラウザ</h2>
+        <ul>
+          <li>Chrome v{chrome}</li>
+          <li>Edge v{edge}</li>
+          <li>Firefox v{firefox}</li>
+          <li>Safari v{safari}</li>
+          <li>iOS Safari v{ios_saf}</li>
+          <li>Android Chrome v{and_chr}</li>
         </ul>
       </main>
       <footer>
