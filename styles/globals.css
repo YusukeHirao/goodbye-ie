@@ -13,6 +13,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, sans-serif;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -22,7 +23,7 @@ body {
 main {
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 ul {
@@ -40,6 +41,10 @@ li {
   margin: 0 0.5em 0 0;
   line-height: 1;
   white-space: nowrap;
+}
+
+footer {
+  padding: 0 10px;
 }
 
 footer dl div {
