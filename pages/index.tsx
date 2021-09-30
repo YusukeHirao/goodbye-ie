@@ -122,6 +122,8 @@ export async function getStaticProps() {
   return { props: { db, date, version } };
 }
 
+type Stat = "y" | `y ${string}` | "a" | `a ${string}` | "n" | "p";
+
 function browserLatestVersion(browser: { versions: (string | null)[] }) {
   const versions = browser.versions.slice().reverse().slice(3);
   for (const version of versions) {
@@ -134,17 +136,21 @@ function browserLatestVersion(browser: { versions: (string | null)[] }) {
 
 function check(
   stats: {
-    [browser: string]: { [version: string]: "y" | "n" | "y x" };
+    [browser: string]: { [version: string]: Stat };
   },
   b: { [browser: string]: number }
 ) {
   return (
-    stats.ie[b.ie] === "n" &&
-    stats.chrome[b.chrome] !== "n" &&
-    stats.edge[b.edge] !== "n" &&
-    stats.firefox[b.firefox] !== "n" &&
-    stats.safari[b.safari] !== "n" &&
-    stats.ios_saf[b.ios_saf] !== "n" &&
-    stats.and_chr[b.and_chr] !== "n"
+    !supported(stats.ie[b.ie]) &&
+    supported(stats.chrome[b.chrome]) &&
+    supported(stats.edge[b.edge]) &&
+    supported(stats.firefox[b.firefox]) &&
+    supported(stats.safari[b.safari]) &&
+    supported(stats.ios_saf[b.ios_saf]) &&
+    supported(stats.and_chr[b.and_chr])
   );
+}
+
+function supported(stat: Stat) {
+  return /^[ay]/.test(stat);
 }
